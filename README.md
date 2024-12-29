@@ -19,3 +19,16 @@ Windows Port Error Codes for Elastic Search https://www.ultimatewindowssecurity.
 
 4. event.code:4625 AND winlog.event_data.SubStatus:0xC0000072 AND @timestamp >= "2023-03-03T00:00:00.000Z" AND @timestamp <= "2023-03-06T23:59:59.999Z"
 -By using this query, SOC analysts can identify failed login attempts against disabled accounts that took place between March 3rd 2023 and March 6th 2023.
+------------------------------------
+
+When creating an SOP and documenting alert handling, consider the following:
+
+-process.name
+-process.parent.name
+-event.action
+-machine where the alert was detected
+-user associated with the machine
+-user activity within +/- 2 days of the alert's generation
+
+After gathering this information, defenders should engage with the user and examine the user's machine to analyze system logs, antivirus logs, and proxy logs from the SIEM for full visibility.
+The SOC team should document all the above points, along with the Incident Response Plan, so that Incident Handlers can reference them during analysis.
