@@ -23,12 +23,12 @@ Windows Port Error Codes for Elastic Search https://www.ultimatewindowssecurity.
 
 When creating an SOP and documenting alert handling, consider the following:
 
--process.name
--process.parent.name
--event.action
--machine where the alert was detected
--user associated with the machine
--user activity within +/- 2 days of the alert's generation
+1. process.name
+2. process.parent.name
+3. event.action
+4. machine where the alert was detected
+5. user associated with the machine
+6. user activity within +/- 2 days of the alert's generation
 
 After gathering this information, defenders should engage with the user and examine the user's machine to analyze system logs, antivirus logs, and proxy logs from the SIEM for full visibility.
 The SOC team should document all the above points, along with the Incident Response Plan, so that Incident Handlers can reference them during analysis.
